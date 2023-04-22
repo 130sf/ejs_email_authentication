@@ -20,21 +20,21 @@ app.listen(PORT, () => {
 })
 
 
-// app.get('/', (req, res) => {
-//   res.redirect('/login')
-// })
-// app.get('/login', (req, res) => {
-//   res.render('login')
-// })
-// app.get('/register', (req, res) => {
-//   res.render('register')
-// })
-// app.get('/link', (req, res) => {
-//   res.render('confirmPage')
-// })
-// app.get('/loggedin', (req, res) => {
-//   res.render('loggedin')
-// })
+app.get('/', (req, res) => {
+  res.redirect('/login')
+})
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+app.get('/register', (req, res) => {
+  res.render('register')
+})
+app.get('/link', (req, res) => {
+  res.render('confirmPage')
+})
+app.get('/loggedin', (req, res) => {
+  res.render('loggedin')
+})
 
 app.post('/new', (req, res) => {
   let user = {
