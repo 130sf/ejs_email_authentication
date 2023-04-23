@@ -30,7 +30,7 @@ app.get('/register', (req, res) => {
   res.render('register')
 })
 app.get('/link', (req, res) => {
-  res.render('confirmPage')
+  res.render('confirmSite')
 })
 app.get('/loggedin', (req, res) => {
   res.render('loggedin')
@@ -58,8 +58,8 @@ app.post('/new', (req, res) => {
     })
 
     var transporter = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
+      host: ".smtp.",
+      port: 2222,
     
       auth: {
         user: "",
@@ -68,9 +68,11 @@ app.post('/new', (req, res) => {
     });
 
     let info = transporter.sendMail({
-      from: '"Langley | Federal Bureau of Investigations" <sender_email>', 
-      to: "user_eMailaddress", 
-      subject: "..U R a eMail-Spammer..",
+
+        from: '"Langley | Federal Bureau of Investigation" <christopher_wray@fbi.gov>', 
+      to: "", 
+
+      subject: "..U R a bad eMail-Spammer..",
       text: "We've got your back..", 
       html: `<b>STOP SPAMMING; MOTHERFUCKER</b>
         <a href= "http://localhost:${PORT}/confirm/${user.confirmationCode}">..click for confirmation..</a>
